@@ -1,10 +1,13 @@
+import 'package:bookapp/features/splash/presentation/views/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
-class splashView extends StatelessWidget {
-  const splashView({super.key});
+class SplashView extends StatelessWidget {
+  const SplashView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: SplashViewBody(),
+    );
   }
 }
