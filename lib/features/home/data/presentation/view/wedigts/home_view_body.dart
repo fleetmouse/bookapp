@@ -5,6 +5,7 @@ import 'package:bookapp/features/home/data/presentation/view/wedigts/listview_up
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,9 +13,8 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: 24), // up or side - symertric
-      child: const Column(
+      padding: EdgeInsets.symmetric(horizontal: 30), // up or side - symertric
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomAppbar(), // custom app bar in wedgit file
@@ -22,8 +22,9 @@ class HomeViewBody extends StatelessWidget {
           Gap(50),
           Text(
             'Best Seller',
-            style: style.titlesec,
+            style: Style.titlesec,
           ),
+          Gap(20),
           BestSellerListView()
         ],
       ),
@@ -52,8 +53,21 @@ class BestSellerListView extends StatelessWidget {
               ),
             ),
           ),
+          const Gap(30),
           Column(
-            children: [],
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .5,
+                child: Text(
+                  'The Godfather Mario Puzo',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.merriweather(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
           )
         ],
       ),
