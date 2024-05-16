@@ -2,6 +2,7 @@ import 'package:bookapp/constants.dart';
 import 'package:bookapp/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const BokkApp());
@@ -25,8 +26,9 @@ class _BokkAppState extends State<BokkApp> with SingleTickerProviderStateMixin {
       theme: ThemeData().copyWith(
         scaffoldBackgroundColor: KprimeColor,
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Color(0xFF5C4B51)),
-          bodyText2: TextStyle(color: Color(0xFF5C4B51)),
+          bodyLarge: GoogleFonts.montserrat(color: KtextColor), //Color
+          bodyMedium: GoogleFonts.montserrat(
+              color: KtextColor), //Color - might change it later
         ),
       ),
       home: SplashView(),
