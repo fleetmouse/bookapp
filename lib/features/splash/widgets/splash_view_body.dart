@@ -1,10 +1,9 @@
 import 'package:bookapp/core/utils/assets.dart';
-import 'package:bookapp/features/home/data/presentation/view/home_view.dart';
 import 'package:bookapp/features/splash/widgets/slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   // remmber the watch it telles you when to tick aka refersh
@@ -32,13 +31,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     // Start the animation
     animationController.forward();
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.to(
-        () => HomeView(), // nav to the home page .
-        transition: Transition.fade,
-        duration: const Duration(milliseconds: 450),
-      );
-    });
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        // Get.to(
+        //   () => HomeView(), // nav to the home page .
+        //   transition: Transition.fade,
+        //   duration: const Duration(milliseconds: 450),
+        // );
+
+        GoRouter.of(context).push('/homeview');
+      },
+    );
     // dispose the controller
   }
 
