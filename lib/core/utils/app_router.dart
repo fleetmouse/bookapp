@@ -1,3 +1,4 @@
+import 'package:bookapp/features/home/data/presentation/view/book_detalis_view.dart';
 import 'package:bookapp/features/home/data/presentation/view/home_view.dart';
 import 'package:bookapp/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -14,6 +15,12 @@ abstract class AppRouter {
       path: '/homeview',
       builder: (context, state) {
         return const HomeView();
+      },
+    ),
+    GoRoute(
+      path: '/BookDetalisView',
+      builder: (context, state) {
+        return const BookDetalisView();
       },
     ),
   ]);

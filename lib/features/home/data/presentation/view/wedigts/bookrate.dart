@@ -3,12 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class Bookrate extends StatelessWidget {
-  const Bookrate({super.key});
+  const Bookrate({Key? key, this.mainAxisAlignment = MainAxisAlignment.start})
+      : super(key: key);
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
+    return Row(
+      mainAxisAlignment: mainAxisAlignment, // Use the property here
+      children: const [
         Icon(
           FontAwesomeIcons.solidStar,
           color: Color(0xffFFDD4F),
@@ -18,7 +21,7 @@ class Bookrate extends StatelessWidget {
           '4.8',
           style: TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w600,
           ),
         ),
         Gap(5),
@@ -26,10 +29,10 @@ class Bookrate extends StatelessWidget {
           '(245)',
           style: TextStyle(
             fontSize: 14,
-            fontWeight: FontWeight.w300,
+            fontWeight: FontWeight.w500,
             // color: Colors.grey,
           ),
-        )
+        ),
       ],
     );
   }
