@@ -2,7 +2,9 @@ import 'package:bookapp/features/home/data/presentation/view/wedigts/Custom_book
 import 'package:bookapp/features/home/data/presentation/view/wedigts/bookrate.dart';
 import 'package:bookapp/features/home/data/presentation/view/wedigts/books_action.dart';
 import 'package:bookapp/features/home/data/presentation/view/wedigts/homeuplist.dart';
+import 'package:bookapp/features/home/data/presentation/view/wedigts/similer_books_listview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -45,6 +47,20 @@ class BookDetalisViewBody extends StatelessWidget {
           ),
           const Gap(37),
           const BookAction(),
+          const Gap(50),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also Like',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          Gap(16),
+          SimilerbooksListView(),
+          Gap(40),
         ],
       ),
     );
