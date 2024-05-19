@@ -1,8 +1,8 @@
-import 'package:bookapp/features/home/data/presentation/view/wedigts/Custom_booksdetalis_appbar.dart';
-import 'package:bookapp/features/home/data/presentation/view/wedigts/bookrate.dart';
-import 'package:bookapp/features/home/data/presentation/view/wedigts/books_action.dart';
-import 'package:bookapp/features/home/data/presentation/view/wedigts/homeuplist.dart';
 import 'package:bookapp/features/home/data/presentation/view/wedigts/similer_books_listview.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/Custom_booksdetalis_appbar.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/bookrate.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/books_action.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/homeuplist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';

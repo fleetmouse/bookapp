@@ -1,5 +1,5 @@
 import 'package:bookapp/core/utils/assets.dart';
-import 'package:bookapp/features/home/data/presentation/view/wedigts/bookrate.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/bookrate.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
