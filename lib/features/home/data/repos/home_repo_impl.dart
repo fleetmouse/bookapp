@@ -3,6 +3,7 @@ import 'package:bookapp/core/utils/api_service.dart';
 import 'package:bookapp/features/home/data/models/books_model/books_model.dart';
 import 'package:bookapp/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final APIService apiService;
@@ -22,7 +23,11 @@ class HomeRepoImpl implements HomeRepo {
 
       return right(Books); // this from the pacakge that we use dartz
     } on Exception catch (e) {
-      return left(ServerFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromdioError(e));
+      }
+
+      return left(ServerFailure(e.toString()));
     }
   }
 
