@@ -3,21 +3,20 @@ import 'package:bookapp/features/home/data/models/books_model/books_model.dart';
 import 'package:bookapp/features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 
-part 'home_top_list_view_state.dart';
+part 'newset_books_state.dart';
 
-class HomeTopListViewCubit extends Cubit<HomeTopListViewState> {
-  HomeTopListViewCubit(this.homerepo) : super(HomeTopListViewInitial());
-
+class NewsetBooksCubit extends Cubit<NewsetBooksState> {
+  NewsetBooksCubit(this.homerepo) : super(NewsetBooksInitial());
   final HomeRepo homerepo;
 
-  Future<void> fetchFeaturedBooks() async {
-    emit(HomeTopListViewLoading());
+  Future<void> fetchNewestBooks() async {
+    emit(NewsetBooksloading());
     var result = await homerepo.fetchFeaturedBooks();
     result.fold((failure) {
-      emit(HomeTopListViewFailure(failure.errormsg));
+      emit(NewsetBooksfailure(failure.errormsg));
     }, (books) {
       emit(
-        HomeTopListSuccess(books),
+        NewsetBookssuccess(books),
       );
     });
   }
