@@ -32,10 +32,26 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BooksModel>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failure, List<BooksModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(endPoint: 'volumes?q=flutter');
+
+      List<BooksModel> Books = [];
+
+      for (var item in data['items']) {
+        Books.add(BooksModel.fromJson(item));
+      }
+
+      return right(Books); // this from the pacakge that we use dartz
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromdioError(e));
+      }
+
+      return left(ServerFailure(e.toString()));
+    }
   }
 }
+
 
 // we need to make a warper so we make connection with the service
