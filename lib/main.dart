@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setup();
   runApp(const BokkApp());
 }
 
@@ -32,7 +33,7 @@ class _BokkAppState extends State<BokkApp> with SingleTickerProviderStateMixin {
           create: (context) => HomeTopListViewCubit(
             //Home repo use Api service Api service use Dio
             getIt.get<HomeRepoImpl>(),
-          ),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewsetBooksCubit(

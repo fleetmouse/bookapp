@@ -28,7 +28,7 @@ class BooksListView extends StatelessWidget {
         } else if (state is HomeTopListViewFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return CustomLoadingIndcator();
+          return CustomLoadingIndcator(); // make a better looking one
         }
       },
     );

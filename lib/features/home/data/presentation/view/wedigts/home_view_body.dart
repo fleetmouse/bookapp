@@ -1,7 +1,7 @@
 import 'package:bookapp/core/utils/styles.dart';
 import 'package:bookapp/features/home/data/presentation/view/wedigts/bestseller_listView.dart';
-import 'package:bookapp/features/home/data/presentation/view/wedigts/listview_up_part.dart';
 import 'package:bookapp/features/home/presentation/view/wedigts/custom_app_bar.dart';
+import 'package:bookapp/features/home/presentation/view/wedigts/listview_up_part.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
