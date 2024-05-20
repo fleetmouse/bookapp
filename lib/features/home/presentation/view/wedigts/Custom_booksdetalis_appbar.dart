@@ -11,7 +11,7 @@ class CustomAppBar_bookDetalis extends StatelessWidget {
           onPressed: () {},
           icon: const Icon(Icons.close_rounded),
         ),
-        Spacer(),
+        const Spacer(),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.shopping_cart_outlined),

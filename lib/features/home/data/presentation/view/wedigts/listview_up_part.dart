@@ -1,5 +1,3 @@
-import 'package:bookapp/core/custome_error_widget.dart';
-import 'package:bookapp/core/loading.dart';
 import 'package:bookapp/features/home/presentation/view/view_model/fetured_books_cubit/home_top_list_view_cubit.dart';
 import 'package:bookapp/features/home/presentation/view/wedigts/homeuplist.dart';
 import 'package:flutter/material.dart';
@@ -25,11 +23,7 @@ class BooksListView extends StatelessWidget {
               },
             ),
           );
-        } else if (state is HomeTopListViewFailure) {
-          return CustomErrorWidget(errMessage: state.errMessage);
-        } else {
-          return CustomLoadingIndcator();
-        }
+        } else if (state is HomeTopListViewFailure) {}
       },
     );
   }
