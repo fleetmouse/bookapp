@@ -1,4 +1,5 @@
 import 'package:bookapp/core/utils/assets.dart';
+import 'package:bookapp/features/home/data/models/books_model/books_model.dart';
 import 'package:bookapp/features/home/presentation/view/wedigts/bookrate.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,8 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  const BestSellerItem({super.key, required this.bookModel});
+  final BooksModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      'The Godfather Mario Puzo',
+                      bookModel.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.merriweather(
@@ -49,20 +51,23 @@ class BestSellerItem extends StatelessWidget {
                     ),
                   ),
                   const Gap(3),
-                  const Text(
-                    'J.K Rowling',
+                  Text(
+                    bookModel.volumeInfo.authors![0],
                     style: TextStyle(fontSize: 14),
                   ),
                   const Gap(3),
                   const Row(
                     children: [
                       Text(
-                        '19.99\$',
+                        'Free',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       Spacer(),
-                      Bookrate(),
+                      Bookrate(
+                        rate: bookModel.volumeInfo.averageRating!,
+                        count: bookModel.volumeInfo.ratingsCount!,
+                      ),
                     ],
                   ),
                 ],

@@ -13,7 +13,10 @@ class SimilerbooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: EdgeInsets.symmetric(horizontal: 5),
-            child: HomeUpList(),
+            child: HomeUpList(
+              ImgUrl:
+                  'https://marketplace.canva.com/EAFPHUaBrFc/1/0/1003w/canva-black-and-white-modern-alone-story-book-cover-QHBKwQnsgzs.jpg',
+            ),
           );
         },
       ),

@@ -1,20 +1,19 @@
-import 'package:bookapp/core/utils/assets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class HomeUpList extends StatelessWidget {
-  const HomeUpList({super.key});
-
+  const HomeUpList({super.key, required this.ImgUrl});
+  final String ImgUrl;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          image: const DecorationImage(
-            image: AssetImage(AssetsData.test1),
-            fit: BoxFit.fill,
-          ), // so the pic cant take the container size
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: CachedNetworkImage(
+          // so we can add fade when the image apper
+          imageUrl: ImgUrl,
+          fit: BoxFit.fill,
         ),
       ),
     );

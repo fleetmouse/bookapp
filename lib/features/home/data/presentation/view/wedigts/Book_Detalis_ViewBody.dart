@@ -22,7 +22,9 @@ class BookDetalisViewBody extends StatelessWidget {
           const CustomAppBar_bookDetalis(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .19),
-            child: const HomeUpList(),
+            child: const HomeUpList(
+              ImgUrl: '',
+            ),
           ),
           const Gap(43),
           Text(

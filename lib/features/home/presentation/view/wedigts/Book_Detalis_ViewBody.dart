@@ -22,7 +22,10 @@ class BookDetalisViewBody extends StatelessWidget {
           const CustomAppBar_bookDetalis(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .19),
-            child: const HomeUpList(),
+            child: const HomeUpList(
+              ImgUrl:
+                  'https://marketplace.canva.com/EAFPHUaBrFc/1/0/1003w/canva-black-and-white-modern-alone-story-book-cover-QHBKwQnsgzs.jpg',
+            ),
           ),
           const Gap(43),
           Text(
@@ -43,6 +46,8 @@ class BookDetalisViewBody extends StatelessWidget {
           ),
           const Gap(18),
           const Bookrate(
+            rate: 5,
+            count: 250,
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const Gap(37),

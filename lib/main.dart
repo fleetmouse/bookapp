@@ -36,11 +36,10 @@ class _BokkAppState extends State<BokkApp> with SingleTickerProviderStateMixin {
           )..fetchFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewsetBooksCubit(
-            //Home repo use Api service Api service use Dio
-            getIt.get<HomeRepoImpl>(), // we used getit package here
-          ),
-        ),
+            create: (context) => NewsetBooksCubit(
+                  //Home repo use Api service Api service use Dio
+                  getIt.get<HomeRepoImpl>(), // we used getit package here
+                )..fetchNewestBooks()),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

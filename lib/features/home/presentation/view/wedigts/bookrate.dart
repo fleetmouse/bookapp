@@ -3,9 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 class Bookrate extends StatelessWidget {
-  const Bookrate({Key? key, this.mainAxisAlignment = MainAxisAlignment.start})
-      : super(key: key);
+  const Bookrate({
+    Key? key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.rate,
+    required this.count,
+  }) : super(key: key);
+
   final MainAxisAlignment mainAxisAlignment;
+  final int rate;
+  final int count;
 
   @override
   Widget build(BuildContext context) {
